@@ -5,7 +5,6 @@ const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
   apiKey: process.env.API_KEY,
 });
-
 const openai = new OpenAIApi(configuration);
 
 exports.handler = async (event, context) => {
@@ -20,10 +19,8 @@ exports.handler = async (event, context) => {
     stop,
   } = completionSettings || {};
 
-  // console.log(JSON.stringify(question));
-  // console.log(completionSettings);
-
-  const openaiResponse = await openai.createCompletion('text-davinci-002', {
+  const openaiResponse = await openai.createCompletion({
+    model: 'text-davinci-002',
     prompt: question,
     temperature: temperature || 0.3,
     max_tokens: maxTokens || 200,
