@@ -96,8 +96,8 @@ const App = () => {
         createPortal(
           <Grow in={showAlert}>
             <Alert
-              variant="filled"
-              severity="error"
+              variant='filled'
+              severity='error'
               onClose={() => {
                 setShowAlert(false);
               }}
@@ -111,31 +111,31 @@ const App = () => {
 
       <SettingsModal showModal={showModal} onClose={closeModalHandler} />
 
-      <div className="max-w-screen-lg mx-auto p-4 pt-2 flex flex-col justify-between h-screen overflow-y-hidden xs:p-8">
-        <div className="flex flex-row justify-center items-center gap-x-4">
-          <h1 className="font-bold text-2xl">Chat With OpenAI</h1>
+      <div className='max-w-screen-lg mx-auto p-4 pt-2 flex flex-col justify-between h-screen overflow-y-hidden xs:p-8'>
+        <div className='flex flex-row justify-center items-center gap-x-4'>
+          <h1 className='font-bold text-2xl'>Chat With OpenAI</h1>
           <Button
             onClick={showModalHandler}
-            color="inherit"
+            color='inherit'
             sx={{
               padding: 0,
               minWidth: 0,
             }}
-            className="group"
+            className='group'
           >
             <SettingsIcon
-              fontSize="large"
-              className="group-hover:outline-2 group-hover:outline-dotted "
+              fontSize='large'
+              className='group-hover:outline-2 group-hover:outline-dotted '
             />
           </Button>
         </div>
 
-        <div className="h-full pb-8 flex flex-col justify-start gap-y-4">
+        <div className='h-full pb-8 flex flex-col justify-start gap-y-4'>
           <div
             ref={chatContainer}
-            className="h-full max-h-[70vh] w-full space-y-4 overflow-y-auto py-4"
+            className='h-full max-h-[70vh] w-full space-y-4 overflow-y-auto py-4'
           >
-            <Message type="answer" msg="Hi!" nolabel />
+            <Message type='answer' msg='Hi!' nolabel />
 
             {dummyData.map((data, idx) => (
               <Message key={idx + 1} type={data.type} msg={data.msg} />
